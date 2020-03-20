@@ -1,0 +1,16 @@
+---
+- hosts: routers
+  gather_facts: false
+
+  tasks:
+    - name: Show running configuration
+      ios_command:
+        commands:
+          - show running-config
+      register: config
+
+    - name: Save output to file /configuration
+      copy:
+        content: "{{config.stdout[0]}}"
+        dest: "outputs/configuration/{{inventory_hostname}}-config.txt"
+...
