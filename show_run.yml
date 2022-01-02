@@ -1,5 +1,5 @@
 ---
-- hosts: Testbed_Inventory
+- hosts: 192.168.0.178
   gather_facts: false
 
   tasks:
