@@ -12,5 +12,5 @@
     - name: Save output to file
       copy:
         content: "{{config.stdout[0]}}"
-        dest: "/var/lib/awx/projects/test/{{inventory_hostname}}-config.txt"
+        dest: "outputs/{{inventory_hostname}}-config.txt"
 ...
